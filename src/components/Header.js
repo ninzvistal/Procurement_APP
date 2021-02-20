@@ -5,22 +5,33 @@ import {
     Grid,
     InputBase,
     IconButton,
-    Badge,   
+    Badge,
+    makeStyles   
 }from '@material-ui/core';
 import NotificationsNoneIcon from '@material-ui/icons/NotificationsNone';
 import PowerSettingsNewIcon from '@material-ui/icons/PowerSettingsNew';
 import ChatBubbleOutline from '@material-ui/icons/ChatBubbleOutline';
 
+
+
+const useStyles = makeStyles({
+    appBar:{
+        position: 'relative'
+    }
+})
+
 const Header = () => {
 
+    const classes = useStyles();
+
     return (
-        <AppBar postiion="static">
+        <AppBar className={classes.appBar}>
             <Toolbar>
                 <Grid container>
-                    <Grid item xs={4} style={{border:'1px solid black'}}>
+                    <Grid item sm={8}>
                         <InputBase />
                     </Grid>
-                    <Grid item xs={8} style={{border:'1px solid yellow'}}>
+                    <Grid item sm={4}>
                         <IconButton>
                             <Badge badgeContent={4} color="secondary">
                                 <NotificationsNoneIcon />

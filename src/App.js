@@ -9,8 +9,10 @@ import {
 
 const useStyles = makeStyles({
   appMain: {
-    padding: '300px',
-    width: '100%'
+    paddingLeft: '320px',
+    top:'0px',
+    width: '100%',
+    position:'relative'
   }
 })
 
@@ -20,8 +22,8 @@ function App() {
   const classes = useStyles();
 
       return (  
-      <>   
-          <SideMenu />
+      <>
+          <SideMenu />  
           <div className={classes.appMain}>
             <Header />
           </div>       

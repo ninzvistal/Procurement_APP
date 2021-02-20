@@ -6,13 +6,14 @@ import {
 
 const useStyles = makeStyles({
     sideMenu:{
-        display: 'flex',
+        display: 'block',
         flexDirection: 'column',
         position: 'absolute',
         left: '0px',
         width: '320px',
         height: '100%',
-        backgroundColor:'#253053' 
+        backgroundColor:'#253053', 
+        zIndex:1
     }
 })
 
