@@ -4,13 +4,12 @@ import SideMenu from './components/SideMenu';
 import Header from './components/Header';
 import {
   makeStyles
-
 } from '@material-ui/core';
 
 
-const useStyle = makeStyles({
+const useStyles = makeStyles({
   appMain: {
-    padding: '320px',
+    padding: '300px',
     width: '100%'
   }
 })
@@ -18,14 +17,14 @@ const useStyle = makeStyles({
 
 function App() {
 
-  const classes = useStyle();
+  const classes = useStyles();
 
       return (  
-      <>           
-        <div>
+      <>   
           <SideMenu />
-          <div className={classes.appMain}>Hello</div>
-        </div>
+          <div className={classes.appMain}>
+            <Header />
+          </div>       
       </>        
     );
 }

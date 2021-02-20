@@ -5,12 +5,12 @@ import {
 
 
 const useStyles = makeStyles({
-    sidemenu:{
+    sideMenu:{
         display: 'flex',
         flexDirection: 'column',
         position: 'absolute',
         left: '0px',
-        width: '300px',
+        width: '320px',
         height: '100%',
         backgroundColor:'#253053' 
     }
@@ -19,12 +19,10 @@ const useStyles = makeStyles({
 const SideMenu = () => {
 
     const classes = useStyles();
-    console.log(classes);
     
-
-
     return(
-        <div className={classes.sidemenu}></div>
+        <div className={classes.sideMenu}>
+        </div>
     )
 
 }
