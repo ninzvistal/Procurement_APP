@@ -14,7 +14,7 @@ import ChatBubbleOutline from '@material-ui/icons/ChatBubbleOutline';
 import SearchIcon from '@material-ui/icons/Search';
 
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
     appBar:{
         position: 'relative'
     },
@@ -40,7 +40,7 @@ const useStyles = makeStyles({
     //     backgroundColor: 'red'
 
     // }
-})
+}))
 
 const Header = () => {
 
