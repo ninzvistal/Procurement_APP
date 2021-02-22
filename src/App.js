@@ -8,9 +8,9 @@ import {
   createMuiTheme,
   ThemeProvider
 } from '@material-ui/core';
-import SupervisedUserCircleIcon from '@material-ui/icons/SupervisedUserCircle';
-import PageHeader from './components/PageHeader';
-
+// import SupervisedUserCircleIcon from '@material-ui/icons/SupervisedUserCircle';
+// import PageHeader from './components/PageHeader';
+import Employees  from './pages/Employees/Employees';
 
 
 
@@ -66,12 +66,12 @@ function App() {
           <SideMenu />  
           <div className={classes.appMain}>
             <Header />
-            <PageHeader
+            {/* {/* <PageHeader
               title="Page Header"
               subtitle="Page Description"
               icon={<SupervisedUserCircleIcon fontSize="large" />}
-            />
-            {/* <Employees /> */}
+             /> */}
+            <Employees />
           </div>  
           <CssBaseline />     
       </ThemeProvider>        
