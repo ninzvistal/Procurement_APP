@@ -51,14 +51,15 @@ const Header = () => {
             <Toolbar>
                 <Grid container
                 alignItems="center">
-                    <Grid item sm={8}>
+                    <Grid item>
                         <InputBase 
                         placeholder="Search Topics"
                         className={classes.searhInput}
                         startAdornment={<SearchIcon fontSize="small" />}
                         />
                     </Grid>
-                    <Grid item sm={4}>
+                    <Grid item sm></Grid>
+                    <Grid item>
                         <IconButton 
                         // classes={{root:classes.btnRoot,label:classes.btnLabel}}
                         >
