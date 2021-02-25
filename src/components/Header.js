@@ -47,10 +47,11 @@ const Header = () => {
     const classes = useStyles();
 
     return (
-        <AppBar position="statid" className={classes.root}>
+        <AppBar position="static" className={classes.root}>
             <Toolbar>
                 <Grid container
-                alignItems="center">
+                alignItems="center"
+                >
                     <Grid item>
                         <InputBase 
                         placeholder="Search Topics"

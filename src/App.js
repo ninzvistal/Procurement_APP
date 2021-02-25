@@ -52,7 +52,7 @@ const useStyles = makeStyles({
     paddingLeft: '320px',
     top:'0px',
     width: '100%',
-    position:'relative'
+    // position:'relative'
   }
 })
 
@@ -71,8 +71,9 @@ function App() {
               subtitle="Page Description"
               icon={<SupervisedUserCircleIcon fontSize="large" />}
              /> */}
-            <Employees />
-          </div>  
+             <Employees /> 
+          </div>
+          
           <CssBaseline />     
       </ThemeProvider>        
     );

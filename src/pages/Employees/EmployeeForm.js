@@ -3,27 +3,32 @@ import {
     FormControl,    
     TextField,
     Grid,
-    makeStyles
+    makeStyles,
+    FormLabel,
+    RadioGroup,
+    FormControlLabel,
+    Radio,
+    Paper
 }from '@material-ui/core'
-import useForm from '../../components/useForm';
 
 
 const useStyles = makeStyles(theme => ({
     root:{
+        flexGrow: 1,
         '& .MuiFormControl-root':{
-            with: '80%',
-            margin: theme.spacing(1)
-        }
+             width: '100%',
+             margin: theme.spacing(1),
+             position: 'relative'
+         }
     }
-
 
 }))
 
 
 
 const initialValues = {
-    id: '0',
-    firstname: '',   
+    id: 0,
+    fullname: '',
     email: '',
     mobile: '',
     city: '',
@@ -35,45 +40,56 @@ const initialValues = {
 
 export default function EmployeeForm(){
 
-    // const [values, setValues] = useState(initialValues);
-
-    const{
-        values,
-        setValues,
-        handleInputChange
-    } = useForm(initialValues);
-
+    const [values, setValues] = useState(initialValues);
     const classes = useStyles();
     
-    // const handleInputChange = e => {
-    //     const [name, value] = e.target
-    //     setValues({
-    //         ...values,
-    //         [name]:value
-    //     })
-    // }
+    const handleInputChange = e => {
+        const [name, value] = e.target
+        setValues({
+            ...values,
+            [name]:value
+        })
+    }
 
     return(
-        <FormControl className={classes.root}>
-            <Grid container>
-                <Grid item xs={6}>
-                    <TextField
-                        variant="outlined"                        
-                        label="firstaname"
-                        name="firstname"
-                        value = { values.mobile} 
-                        onChange = { handleInputChange }
-                    /> 
-                     <TextField
-                        variant="outlined"                        
-                        label="mobile"
-                        name="mobile"
-                        value = { values.mobile }
-                    />                              
-                </Grid>                
-                <Grid item xs={6}></Grid>
-            </Grid>
-        </FormControl>
+        <>
+            
+            <form className={classes.root}>
+                <Grid
+                container 
+                alignItems="flex-start"            
+                >
+                    <Grid container xs={12} spacing={1}>
+                        <Grid item xs>
+                            <TextField
+                            variant="outlined"
+                            label="firstname"
+                            name="firstname"
+                            value={values.fullname}
+                            onChange={handleInputChange}
+                            />
+                            <TextField
+                            variant="outlined"
+                            label="email"
+                            name="email"
+                            value={values.email}
+                            />
+                        </Grid>
+                        <Grid item xs>
+                            <FormControl>
+                                <FormLabel>Gender</FormLabel>
+                                <RadioGroup>
+                                    <FormControlLabel value="male" control={<Radio />} label="Male"></FormControlLabel>
+                                    <FormControlLabel value="female" control={<Radio />} label="Female"></FormControlLabel>
+                                    <FormControlLabel value="others" control={<Radio />} label="Others"></FormControlLabel>
+                                </RadioGroup>
+                            </FormControl>
+                        </Grid>
+                    </Grid>
+                </Grid>  
+            </form>
+            
+        </>
     )
 
 }
